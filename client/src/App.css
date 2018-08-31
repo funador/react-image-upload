@@ -1,7 +1,8 @@
 body {
   font-family: Roboto, sans-serif;
   background: #f2f2f2;
-  color: #757575
+  color: #757575;
+  margin: 0px;
 }
 
 .container {
@@ -107,7 +108,8 @@ img {
 footer {
   display: flex;
   justify-content: space-between;
-  width: 98vw;
+  width: 96vw;
+  margin: 0 2vw;
 }
 
 footer a {

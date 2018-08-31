@@ -29,6 +29,7 @@ export default class App extends Component {
         if (res.ok) {
           return this.setState({ loading: false })  
         }
+        this.toast('Something is wrong with Heroku', 'custom', 2000, myColor)
       })
   }
 
@@ -80,17 +81,24 @@ export default class App extends Component {
       })
     })
     .catch(err => {
-      err.json().then( e => {
+      err.json().then(e => {
         this.toast(e.message, 'custom', 2000, myColor)
         this.setState({ uploading: false })
       })
     })
   }
 
+  filter = id => {
+    return this.state.images.filter(image => image.public_id !== id)
+  }
+
   removeImage = id => {
-    this.setState({
-      images: this.state.images.filter(image => image.public_id !== id)
-    })
+    this.setState({ images: this.filter(id) })
+  }
+
+  onError = id => {
+    this.toast('Oops, something went wrong', 'custom', 2000, myColor)
+    this.setState({ images: this.filter(id) })
   }
   
   render() {
@@ -103,7 +111,11 @@ export default class App extends Component {
         case uploading:
           return <Spinner />
         case images.length > 0:
-          return <Images images={images} removeImage={this.removeImage} />
+          return <Images 
+                  images={images} 
+                  removeImage={this.removeImage} 
+                  onError={this.onError}
+                />
         default:
           return <Buttons onChange={this.onChange} />
       }

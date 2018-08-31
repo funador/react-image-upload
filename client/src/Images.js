@@ -11,6 +11,10 @@ export default props =>
       >
         <FontAwesomeIcon icon={faTimesCircle} size='2x' />
       </div>
-      <img src={image.secure_url} alt='' />
+      <img 
+        src={image.secure_url} 
+        alt='' 
+        onError={() => props.removeImage(image.public_id)} 
+      />
     </div>
   )
