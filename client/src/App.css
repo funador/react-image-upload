@@ -4,6 +4,13 @@ body {
   color: #757575
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -35,7 +42,8 @@ svg {
 
 svg:hover {
   filter: drop-shadow(4px 4px 4px #999);
-  transform: rotate(-0.6deg)
+  transform: rotate(-0.6deg);
+  cursor: pointer
 }
 
 input[type=file] { 
@@ -79,7 +87,7 @@ img {
   float: left;
   font-size: 10em !important;
   color: #fff;
-  animation: pulse-icon 2s infinite alternate linear;
+  animation: pulse-icon 4s infinite alternate linear;
 }
 
 @keyframes pulse-icon {
@@ -89,6 +97,62 @@ img {
     to {
       text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
     }
+}
+
+#notification-wrapper {
+  position: absolute;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 98vw;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer span {
+  font-size: 3em !important;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  transition: .3s;
+  padding-top: 3px;
+}
+
+footer span:hover {
+  cursor: pointer;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+footer .small-button {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 55px;
+  height: 55px;
+  transition: .3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+footer .small-button:hover {
+  background: #767676;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.45);
+}
+
+footer .small-button.github {
+  background: #6e5494;
+}
+
+footer .small-button.medium {
+  background: #00ab6c;
+  font-size: 0.85em;
+}
+
+footer .small-button.medium span {
+  position: relative;
+  top: 4px;
 }
 
 @keyframes pulse-colors {
