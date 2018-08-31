@@ -9,4 +9,4 @@ export default () =>
       </div>
       <div className={'spinner'} />
     </div>
-  </div>
+  </div>  

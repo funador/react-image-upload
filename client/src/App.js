@@ -37,14 +37,14 @@ export default class App extends Component {
     const files = Array.from(e.target.files)
 
     if (files.length > 3) {
-      const msg = 'Can only upload up to 3 images at a time'
+      const msg = 'Only 3 images can be uploaded at a time'
       return this.toast(msg, 'custom', 2000, myColor)  
     }
 
     const formData = new FormData()
+    const types = ['image/png', 'image/jpeg', 'image/gif']
 
     files.forEach((file, i) => {
-      const types = ['image/png', 'image/jpeg', 'image/gif']
 
       if (types.every(type => file.type !== type)) {
         errs.push(`'${file.type}' is not a supported format`)

@@ -43,9 +43,9 @@ input[type=file] {
   position: absolute
 }
 
-img{
-  max-height: 400px;
-  max-width: 400px;
+img {
+  max-height: 420px;
+  max-width: 420px;
   padding: 10px;
   border: 1px dashed #999;
 }
@@ -117,7 +117,7 @@ img{
 }
 
 .spinner {
-  animation: spin 4s infinite linear
+  animation: spin 2s infinite linear
 }
 
 @-webkit-keyframes spin {
