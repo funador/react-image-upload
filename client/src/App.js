@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Notifications, { notify } from 'react-notify-toast'
 import Spinner from './Spinner'
 import Images from './Images'
@@ -68,7 +67,12 @@ export default class App extends Component {
       method: 'POST',
       body: formData
     })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw res
+      }
+      return res.json()
+    })
     .then(images => {
       this.setState({ 
         uploading: false,
@@ -76,8 +80,10 @@ export default class App extends Component {
       })
     })
     .catch(err => {
-      this.toast('Oops, something went wrong', 'custom', 2000, myColor)
-      this.setState({ uploading: false })
+      err.json().then( e => {
+        this.toast(e.message, 'custom', 2000, myColor)
+        this.setState({ uploading: false })
+      })
     })
   }
 
