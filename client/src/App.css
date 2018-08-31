@@ -1,0 +1,130 @@
+body {
+  font-family: Roboto, sans-serif;
+  background: #f2f2f2;
+  color: #757575
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 75vh
+}
+
+.button {
+  margin: 0 10vw
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+}
+
+.delete {
+  position: relative;
+  top: 16px;
+  right: 15px
+}
+
+svg {
+  filter: drop-shadow(3px 3px 3px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg)
+}
+
+svg:hover {
+  filter: drop-shadow(4px 4px 4px #999);
+  transform: rotate(-0.6deg)
+}
+
+input[type=file] { 
+  visibility: hidden;
+  position: absolute
+}
+
+img{
+  max-height: 400px;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px dashed #999;
+}
+
+/* Loading */
+.loading-wrapper, .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+}
+
+.loading {
+  width: 200px;
+  height: 200px;
+}
+
+.loading .background {
+  border-radius: 50%;
+  background: #6762a6;
+  border: 3px solid #c9c3e6;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  width: 200px;  
+  height: 200px;
+  box-sizing: border-box;
+  animation: pulse-colors 2s infinite alternate linear;
+}
+
+.loading i {
+  margin: 25px 5px 5px 55px;
+  float: left;
+  font-size: 10em !important;
+  color: #fff;
+  animation: pulse-icon 2s infinite alternate linear;
+}
+
+@keyframes pulse-icon {
+    from {
+      text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    to {
+      text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
+    }
+}
+
+@keyframes pulse-colors {
+    from {
+      background: #c9c3e6;
+      border: 3px solid #a29ccc;
+    }
+    to {
+      background: #6762a6;
+      border: 3px solid #c9c3e6;
+    }
+}
+
+/* Animations */
+.fadein {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.spinner {
+  animation: spin 4s infinite linear
+}
+
+@-webkit-keyframes spin {
+    0%  {
+      -webkit-transform: rotate(0deg)
+    }
+    100% {
+      -webkit-transform: rotate(360deg)
+    }   
+}
