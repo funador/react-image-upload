@@ -14,7 +14,7 @@ export default props =>
       <img 
         src={image.secure_url} 
         alt='' 
-        onError={() => props.removeImage(image.public_id)} 
+        onError={() => props.onError(image.public_id)}
       />
     </div>
   )

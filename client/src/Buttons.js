@@ -18,5 +18,5 @@ export default props =>
       </label>
       <input type='file' id='multi' onChange={props.onChange} multiple />
     </div>
-    
+
   </div>

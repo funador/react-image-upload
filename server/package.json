@@ -4,7 +4,8 @@
   "description": "Image upload example with React",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server"
   },
   "author": "jesse heaslip",
   "license": "MIT",
@@ -14,5 +15,8 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-form-data": "^2.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
