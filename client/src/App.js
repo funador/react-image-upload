@@ -18,7 +18,6 @@ export default class App extends Component {
   state = {
     loading: true,
     uploading: false,
-    toLoad: 1,
     images: []
   }
 
