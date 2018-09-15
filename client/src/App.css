@@ -35,13 +35,13 @@ body {
   right: 15px
 }
 
-svg {
+footer svg, .button svg {
   filter: drop-shadow(3px 3px 3px #999);
   transition: 0.3s;
   transform: rotate(-0.2deg)
 }
 
-svg:hover {
+footer svg:hover, .button svg:hover {
   filter: drop-shadow(4px 4px 4px #999);
   transform: rotate(-0.6deg);
   cursor: pointer
@@ -172,7 +172,12 @@ footer .small-button.medium {
 }
 
 .spinner {
-  animation: spin 1.2s infinite linear
+  animation: spin 1.2s infinite linear;
+}
+
+.spinner svg {
+  background: #f2f2f2;
+  border-radius: 50%
 }
 
 @-webkit-keyframes spin {
@@ -186,14 +191,15 @@ footer .small-button.medium {
 
 .rolling {
   position: absolute;
-  animation: move 6s infinite linear
+  animation: move 6s infinite linear;
+  filter: drop-shadow(4px 4px 4px #999);
 }
 
 @-webkit-keyframes move {
     0%  {
-      left: -50px;
+      left: -5%;
     }
     100% {
-      left: 100%;
+      left: 105%;
     }   
 }
