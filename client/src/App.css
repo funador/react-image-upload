@@ -172,7 +172,7 @@ footer .small-button.medium {
 }
 
 .spinner {
-  animation: spin 2s infinite linear
+  animation: spin 1.2s infinite linear
 }
 
 @-webkit-keyframes spin {
@@ -181,5 +181,19 @@ footer .small-button.medium {
     }
     100% {
       -webkit-transform: rotate(360deg)
+    }   
+}
+
+.rolling {
+  position: absolute;
+  animation: move 6s infinite linear
+}
+
+@-webkit-keyframes move {
+    0%  {
+      left: -50px;
+    }
+    100% {
+      left: 100%;
     }   
 }
