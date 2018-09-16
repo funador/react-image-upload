@@ -3,7 +3,8 @@
 ![React Image Upload](https://cdn-images-1.medium.com/max/1600/1*2a5Zidam3OI-Ep19-tT1AQ.gif)
 
 ## Medium post that details this repo
-* [React Image Upload (With Kittens!)](https://medium.com/p/cc96430eaece)
+* [Simple Image Upload with React](https://medium.com/p/cc96430eaece)
+* [Live demo](https://react-image-upload.surge.sh)
 
 ## Getting Started
 
