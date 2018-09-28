@@ -181,7 +181,7 @@ footer .small-button.medium {
 }
 
 .spinner {
-  animation: spin 1.2s infinite ease-in-out;
+  animation: spin 1.2s infinite linear;
 }
 
 .spinner svg {
@@ -200,7 +200,7 @@ footer .small-button.medium {
 
 .rolling {
   position: absolute;
-  animation: move 6s infinite ease-in-out;
+  animation: move 6s ease-out;
   filter: drop-shadow(4px 4px 4px #999);
 }
 
