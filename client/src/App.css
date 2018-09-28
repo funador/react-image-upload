@@ -109,12 +109,12 @@ img {
 }
 
 @keyframes pulse-icon {
-    from {
-      text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
-    }
-    to {
-      text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
-    }
+  from {
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  to {
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
+  }
 }
 
 #notification-wrapper {
@@ -156,14 +156,14 @@ footer .small-button.medium {
 }
 
 @keyframes pulse-colors {
-    from {
-      background: #c9c3e6;
-      border: 3px solid #a29ccc;
-    }
-    to {
-      background: #6762a6;
-      border: 3px solid #c9c3e6;
-    }
+  from {
+    background: #c9c3e6;
+    border: 3px solid #a29ccc;
+  }
+  to {
+    background: #6762a6;
+    border: 3px solid #c9c3e6;
+  }
 }
 
 /* Animations */
@@ -172,12 +172,12 @@ footer .small-button.medium {
 }
 
 @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .spinner {
@@ -190,12 +190,12 @@ footer .small-button.medium {
 }
 
 @-webkit-keyframes spin {
-    0%  {
-      -webkit-transform: rotate(0deg)
-    }
-    100% {
-      -webkit-transform: rotate(360deg)
-    }   
+  0%  {
+    -webkit-transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg)
+  }   
 }
 
 .rolling {
@@ -205,10 +205,10 @@ footer .small-button.medium {
 }
 
 @-webkit-keyframes move {
-    0%  {
-      left: -5%;
-    }
-    100% {
-      left: 105%;
-    }   
+  0%  {
+    left: -5%;
+  }
+  100% {
+    left: 105%;
+  }   
 }
