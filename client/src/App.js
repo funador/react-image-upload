@@ -116,7 +116,7 @@ export default class App extends Component {
                   images={images} 
                   removeImage={this.removeImage} 
                   onError={this.onError}
-                />
+                 />
         default:
           return <Buttons onChange={this.onChange} />
       }
