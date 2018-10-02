@@ -103,7 +103,7 @@ export default class App extends Component {
   }
   
   render() {
-    const { uploading, images, loading } = this.state
+    const { loading, uploading, images } = this.state
     
     const content = () => {
       switch(true) {

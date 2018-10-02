@@ -48,20 +48,15 @@ footer svg:hover, .button svg:hover, .delete svg:hover {
 }
 
 .delete svg {
-  filter: drop-shadow(1px 1px 1px #999);
+  filter: drop-shadow(1px 1px 1px #999)
 }
-
-.delete svg:hover {
-  filter: drop-shadow(1.5px 1.5px 1.5px #999);
-}
-
 
 footer svg {
-  filter: drop-shadow(1.5px 1px 1px #999);
+  filter: drop-shadow(1.5px 1px 1px #999)
 }
 
-footer svg:hover {
-  filter: drop-shadow(1.5px 1.5px 1.5px #999);
+footer svg:hover, .delete svg:hover {
+  filter: drop-shadow(1.5px 1.5px 1.5px)
 }
 
 input[type=file] { 
@@ -106,15 +101,6 @@ img {
   font-size: 10em !important;
   color: #fff;
   animation: pulse-icon 4s infinite alternate linear;
-}
-
-@keyframes pulse-icon {
-  from {
-    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
-  }
-  to {
-    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
-  }
 }
 
 #notification-wrapper {
@@ -211,4 +197,13 @@ footer .small-button.medium {
   100% {
     left: 105%;
   }   
+}
+
+@keyframes pulse-icon {
+  from {
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  to {
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
+  }
 }
