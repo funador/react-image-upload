@@ -32,4 +32,11 @@ app.post('/image-upload', (req: Request, res: Response) => {
     .catch((err) => res.status(400).json(err))
 })
 
-app.listen(process.env.PORT || 8080, () => console.log('👍'))
+export default app
+
+// Vercel imports this file as a module rather than executing it, so only
+// start listening on a port when it's run directly (local dev via
+// ts-node-dev, or a traditional `node dist/server.js` host).
+if (require.main === module) {
+  app.listen(process.env.PORT || 8080, () => console.log('👍'))
+}

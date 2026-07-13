@@ -34,7 +34,7 @@ export default class App extends Component<{}, AppState> {
         if (res.ok) {
           return this.setState({ loading: false })
         }
-        const msg = 'Something is went wrong with Heroku'
+        const msg = 'Something went wrong waking up the server'
         this.toast(msg, 'custom', 2000, toastColor)
       })
   }

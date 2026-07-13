@@ -95,11 +95,9 @@ img {
   animation: pulse-colors 2s infinite alternate linear;
 }
 
-.loading i {
+.loading svg {
   margin: 25px 5px 5px 55px;
   float: left;
-  font-size: 10em !important;
-  color: #fff;
   animation: pulse-icon 4s infinite alternate linear;
 }
 
@@ -201,9 +199,9 @@ footer .small-button.medium {
 
 @keyframes pulse-icon {
   from {
-    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.25));
   }
   to {
-    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.55));
   }
 }

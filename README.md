@@ -6,7 +6,7 @@ Drag-free image upload with React and a small Node server - files go straight to
 
 ## Demo
 
-[Live demo](https://react-image-upload.surge.sh)
+[Live demo](https://react-image-upload-client.vercel.app)
 
 ## Medium post
 
