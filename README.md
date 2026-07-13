@@ -2,33 +2,42 @@
 
 ![React Image Upload](https://cdn-images-1.medium.com/max/1600/1*2a5Zidam3OI-Ep19-tT1AQ.gif)
 
-## Medium post that details this repo
-* [Simple Image Upload with React](https://medium.com/p/cc96430eaece)
-* [Live demo](https://react-image-upload.surge.sh)
+Drag-free image upload with React and a small Node server - files go straight to Cloudinary, and the client just gets back URLs to render. Client and server are both TypeScript.
+
+## Demo
+
+[Live demo](https://react-image-upload.surge.sh)
+
+## Medium post
+
+[Simple Image Upload with React](https://medium.com/p/cc96430eaece)
 
 ## Getting Started
 
-```
+```shell
 git clone https://github.com/funador/react-image-upload.git
+
 cd react-image-upload/client
 npm i && npm start
-// open new terminal
+
+# open another terminal tab
 cd react-image-upload/server
 npm i && npm run dev
 ```
 
-#### To run this project you need a Cloudinary account. 
-You can sign up with Cloudinary [here](https://cloudinary.com/users/register/free).  Afterwards you will need to plug your keys into a *.env* file that needs to be created as well. 
+### Cloudinary
+
+This project needs a [Cloudinary](https://cloudinary.com/users/register/free) account (the free tier is generous enough for a demo). Grab your keys from the Cloudinary dashboard and drop them into `server/.env`:
 
 ```shell
-// server/.env
+# server/.env
 CLOUD_NAME=your_cloud_name
 API_KEY=your_cloud_key
 API_SECRET=your_cloud_secret
 ```
 
-But that is it for the setup!
+That's it for setup.
 
 ### Issues
 
-Something not working?  Please [open an issue](https://github.com/funador/react-image-upload/issues)
+Something not working? Please [open an issue](https://github.com/funador/react-image-upload/issues) or submit a PR.
