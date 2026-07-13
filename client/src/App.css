@@ -173,13 +173,13 @@ footer .small-button.medium {
   border-radius: 50%
 }
 
-@-webkit-keyframes spin {
+@keyframes spin {
   0%  {
-    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
   }
   100% {
-    -webkit-transform: rotate(360deg)
-  }   
+    transform: rotate(360deg)
+  }
 }
 
 .rolling {
@@ -188,13 +188,13 @@ footer .small-button.medium {
   filter: drop-shadow(4px 4px 4px #999);
 }
 
-@-webkit-keyframes move {
+@keyframes move {
   0%  {
     left: -5%;
   }
   100% {
     left: 105%;
-  }   
+  }
 }
 
 @keyframes pulse-icon {
