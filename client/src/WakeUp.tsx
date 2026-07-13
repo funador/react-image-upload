@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default () => 
+const WakeUp = () =>
   <div className={'loading-wrapper fadein'}>
     <h4>Heroku is spinning up, one moment please...</h4>
     <div className={'loading'}>
@@ -10,3 +10,5 @@ export default () =>
       <div className={'spinner'} />
     </div>
   </div>
+
+export default WakeUp

@@ -6,16 +6,23 @@ import Buttons from './Buttons'
 import WakeUp from './WakeUp'
 import Footer from './Footer'
 import { API_URL } from './config'
+import { CloudinaryImage } from './types'
 import './App.css'
 
-const toastColor = { 
-  background: '#505050', 
-  text: '#fff' 
+const toastColor = {
+  background: '#505050',
+  text: '#fff'
 }
 
-export default class App extends Component {
-  
-  state = {
+interface AppState {
+  loading: boolean
+  uploading: boolean
+  images: CloudinaryImage[]
+}
+
+export default class App extends Component<{}, AppState> {
+
+  state: AppState = {
     loading: true,
     uploading: false,
     images: []
@@ -25,22 +32,22 @@ export default class App extends Component {
     fetch(`${API_URL}/wake-up`)
       .then(res => {
         if (res.ok) {
-          return this.setState({ loading: false })  
+          return this.setState({ loading: false })
         }
-        const msg = 'Something is went wrong with Heroku' 
+        const msg = 'Something is went wrong with Heroku'
         this.toast(msg, 'custom', 2000, toastColor)
       })
   }
 
   toast = notify.createShowQueue()
 
-  onChange = e => {
-    const errs = [] 
-    const files = Array.from(e.target.files)
+  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const errs: string[] = []
+    const files = Array.from(e.target.files || [])
 
     if (files.length > 3) {
       const msg = 'Only 3 images can be uploaded at a time'
-      return this.toast(msg, 'custom', 2000, toastColor)  
+      return this.toast(msg, 'custom', 2000, toastColor)
     }
 
     const formData = new FormData()
@@ -56,7 +63,7 @@ export default class App extends Component {
         errs.push(`'${file.name}' is too large, please pick a smaller file`)
       }
 
-      formData.append(i, file)
+      formData.append(i.toString(), file)
     })
 
     if (errs.length) {
@@ -77,11 +84,11 @@ export default class App extends Component {
     })
     .then(images => {
       this.setState({
-        uploading: false, 
+        uploading: false,
         images
       })
     })
-    .catch(err => {
+    .catch((err: Response) => {
       err.json().then(e => {
         this.toast(e.message, 'custom', 2000, toastColor)
         this.setState({ uploading: false })
@@ -89,22 +96,22 @@ export default class App extends Component {
     })
   }
 
-  filter = id => {
+  filter = (id: string) => {
     return this.state.images.filter(image => image.public_id !== id)
   }
 
-  removeImage = id => {
+  removeImage = (id: string) => {
     this.setState({ images: this.filter(id) })
   }
 
-  onError = id => {
+  onError = (id: string) => {
     this.toast('Oops, something went wrong', 'custom', 2000, toastColor)
     this.setState({ images: this.filter(id) })
   }
-  
+
   render() {
     const { loading, uploading, images } = this.state
-    
+
     const content = () => {
       switch(true) {
         case loading:
@@ -112,9 +119,9 @@ export default class App extends Component {
         case uploading:
           return <Spinner />
         case images.length > 0:
-          return <Images 
-                  images={images} 
-                  removeImage={this.removeImage} 
+          return <Images
+                  images={images}
+                  removeImage={this.removeImage}
                   onError={this.onError}
                  />
         default:
